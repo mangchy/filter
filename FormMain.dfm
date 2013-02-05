@@ -198,7 +198,6 @@ object Form1: TForm1
         Height = 73
         Align = alTop
         TabOrder = 0
-        ExplicitTop = -3
         object Bevel2: TBevel
           Left = 110
           Top = 35

@@ -373,9 +373,17 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	double dmaxY = Chart1->Series[0]->MaxYValue();
 	double dDiff = (dmaxY - dminY) / 10.0;
 
+	int iHistogram[10] = {0,};
+	int hist;
 	for(int i=0; i<256; i++)
 	{
-		Chart1->Series[6]->AddXY();
+        hist = (Chart1->Series[0]->YValue[i] - dminY) / dDiff;
+		iHistogram[hist]++;
+	}
+
+	for(int i=0; i<10; i++)
+	{
+        Chart1->Series[6]->AddXY(dminY + dDiff*i, iHistogram[i]);//, FloatToStrF( + , ffFixed, 10, 1));;
     }
 }
 //---------------------------------------------------------------------------
