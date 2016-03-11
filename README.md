@@ -1,4 +1,4 @@
 filter
 ======
 
-Filter Test
+Median Filter Test
